@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>留言板</title>
+	<script src="js/jquery-3.1.1.min.js"></script>
+
+
+</head>
+<body>
+	<div class="top">
+		评论：<textarea  id="a" cols="50" rows="10"></textarea><br>
+	<button>提交</button>
+	</div>
+	
+	
+	
+</body>
+<script>
+	$("button").click(function(){
+
+		var time = new Date();
+		$(".a1").html();
+		$("<p>"+$("#a").val()+"<br>"+time.toLocaleString()+ "<a href='#'>删除</a>"+"</p>").insertAfter("button");
+
+		$("a").each(function(){
+			$(this).click(function(){
+			    this.parentNode.remove();
+			})
+		})
+	})
+</script>
+</html>
